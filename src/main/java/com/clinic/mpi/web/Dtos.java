@@ -80,6 +80,28 @@ public final class Dtos {
     public record AckImpactRequest(String note) {
     }
 
+    public record VisitRecordRequest(
+            @NotBlank String sourceSystem,
+            @NotBlank String sourceRecordId,
+            @NotBlank String sourcePatientId,
+            @NotBlank String eventType,
+            @NotBlank String serviceType,
+            @NotBlank String campusCode,
+            String occurredAt,
+            String occurredDate,
+            String encounterKey,
+            String referralKey,
+            String referralTargetCampus,
+            String serviceDetail,
+            String receivedAt) {
+    }
+
+    public record CompileVisitDatasetRequest(UUID snapshotId, String label) {
+    }
+
+    public record AckQualityRequest(Boolean dismiss, String note) {
+    }
+
     public record ResolveResponse(
             String sourceSystem,
             String sourcePatientId,

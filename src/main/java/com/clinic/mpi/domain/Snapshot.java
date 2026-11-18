@@ -21,7 +21,14 @@ import java.util.UUID;
 @Table(name = "snapshot")
 public class Snapshot {
 
-    public enum BusinessType {APPOINTMENT, SETTLEMENT, LAB, ANALYTICS}
+    public enum BusinessType {
+        APPOINTMENT,
+        SETTLEMENT,
+        LAB,
+        ANALYTICS,
+        /** 就诊事件数据集：路径分析引用的身份快照 */
+        VISIT
+    }
 
     public enum Status {PUBLISHED, CANDIDATE, REJECTED, SUPERSEDED}
 
